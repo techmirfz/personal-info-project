@@ -1,0 +1,106 @@
+
+{% extends 'basic_info/base.html' %}
+<!-- {% load static %} -->
+
+{% block content %}
+    {% if basics %}
+        {% for basic in basics %}
+        <div class="row">
+            <div class="col-lg-7">
+                <div class="card">
+                    <div class="card-header">
+                         <i class="fa fa-align-justify"></i> Basic Information
+                    </div>
+                    <div class="card-body">
+                        <tbody>
+                            <tr>
+                                <td>ID: <b>{{ basic.id }}</b> </td>
+                                <br>
+                                <td>User: <b>{{ basic.user }}</b> </td>
+                                <br>
+                                <td>AFSN: <b>{{ basic.afsn }}</b> </td>
+                                <br>
+                                <td>First Name: <b>{{ basic.firstname }}</b> </td>
+                                <br>
+                                <td>Middle Name: <b>{{ basic.middlename }}</b> </td>
+                                <br>
+                                <td>Last Name: <b>{{ basic.lastname }}</b> </td>
+                            </tr>
+                        </tbody>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-5">
+                <div class="card">
+                    <div class="card-header">
+                         <i class="fa fa-align-justify"></i> Students Personal Info
+                    </div>
+                    <div class="card-body">
+
+                        <h6>{{ basic.category }}</h6>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="card">
+                    <div class="card-header">
+                         <i class="fa fa-align-justify"></i> Military Information
+                    </div>
+                    <div class="card-body">
+                        <tbody>
+                            <tr>
+                                <td>Category: <b>{{ basic.category }}</b> </td>
+                                <br>
+                                <td>Rank: <b>{{ basic.rank }}</b> </td>
+                                <br>
+                                <td>Current Unit: <b>{{ basic.assign }}</b> </td>
+                                <br>
+                            </tr>
+                        </tbody>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="card">
+                    <div class="card-header">
+                         <i class="fa fa-align-justify"></i> Mothers Info
+                    </div>
+                    <div class="card-body">
+                        <tbody>
+                            <tr>
+                                <td>Rank: {{ basics.category }}</td>
+                                <br>
+                                <td>Category: {{ basics.rank }}</td>
+                                <br>
+                                <td>Current Unit: {{ basics.assign }}</td>
+                                <br>
+                            </tr>
+                        </tbody>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+        <a href="{% url 'basicinfoedit' %}">
+        	<button id="edit" type="button" class="btn btn-primary">Edit</button>
+        </a>
+    {% else %}
+        <div class="text-center">
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+                <h2>Looks like you don't have any Basic Information! </h2>
+                <p>Please enter your <b><i>Basic Information</i></b> by clicking the <b>Add</b> button below.</p>
+            <a role="button" class="btn btn-primary" href="{% url 'basicinfoadd' %}">Add</a>
+        </div>
+    {% endif %}
+{% endblock %}
+
+
+

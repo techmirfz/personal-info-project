@@ -20,8 +20,8 @@ class BasicInfo(models.Model):
 	rank = models.CharField(max_length=20, blank=True, verbose_name='RANK')
 	assign = models.CharField(max_length=20, blank=True, verbose_name='CURRENT UNIT')
 	source = models.CharField(max_length=20, blank=True, verbose_name='SOURCE OF COMMISION')
-	dateentersvc = models.DateField(null=True, blank=True)
-	datecompret = models.DateField(null=True, blank=True)
+	dateentersvc = models.DateField(null=True, blank=True, verbose_name='DATE ENTERED SERVICE')
+	datecompret = models.DateField(null=True, blank=True, verbose_name='DATE OF COMPULSORY RETIREMENT')
 	user = models.ForeignKey(User, on_delete=models.CASCADE)
 
 	def __str__(self):

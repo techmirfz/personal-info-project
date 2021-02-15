@@ -15,11 +15,12 @@ class BasicInfoForm(forms.ModelForm):
             'lastname': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'LAST NAME'}),
             'extensionname': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'EXTENSION NAME'}),
             'gender': forms.Select(attrs={'class': 'form-control', 'placeholder': 'GENDER'}),
-            'classification': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'CLASSIFICATION'}),
+            'classification': forms.Select(attrs={'class': 'form-control', 'placeholder': 'CLASSIFICATION'}),
             'assign': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'CURRENT UNIT'}),
 		'source': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'SOURCE OF COMMISSION/ENLISTMENT'}), 
             'dateentersvc': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'DATE ENTERED SERVICE'}),
             'datecompret': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'DATE OF COMPULSORY RETIREMENT'}), 
-		}
+            }
+
 
            

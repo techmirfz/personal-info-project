@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Assignment
+from .models import Assignment, UnitList
 
 class AssignmentAdmin(admin.ModelAdmin):
 	list_display = ['afsn', 'unit', 'sub_unit', 'designation','office','startdate','enddate','category']
@@ -7,6 +7,7 @@ class AssignmentAdmin(admin.ModelAdmin):
 	search_fields = ['afsn', 'unit']
 
 admin.site.register(Assignment, AssignmentAdmin)
+admin.site.register(UnitList)
 
 
 

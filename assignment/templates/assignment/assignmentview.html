@@ -36,7 +36,7 @@
 		                                <td>{{ assignment.endate }}</td>
 		                                <td>{{ assignment.category }}</td>
 		                                <td>
-		                                    <a href="{% url 'trainingedit' training.id %}">
+		                                    <a href="{% url 'assignmentedit' assignment.id %}">
 		                                        <button type="button" class="btn btn-primary">Edit</button>
 		                                    </a>
 		                                    </a>
@@ -52,7 +52,7 @@
 		        </div>
 		    </div>
 		</div>
-		<a href="{% url 'trainingadd' %}">
+		<a href="{% url 'assignmentadd' %}">
 			<button id="edit" type="button" class="btn btn-primary">Add</button>
 		</a>
 	{% else %}
@@ -65,7 +65,7 @@
             <br>
                 <h2>Looks like you don't have any Assignment Records! </h2>
                 <p>Please enter your <b><i>Assignments</i></b> by clicking the <b>Add</b> button below.</p>
-            <a role="button" class="btn btn-primary" href="#">Add</a>
+            <a role="button" class="btn btn-primary" href="{% url 'assignmentadd' %}">Add</a>
         </div>
 	{% endif %}
 {% endblock %}

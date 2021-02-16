@@ -22,7 +22,7 @@ def trainingadd(request):
             newtraining.save()
             return redirect('trainingview')
         except ValueError:
-            return render(request, 'todo/trainingadd.html', {'form':TrainingEditForm(), 'error':'Entered wrong data!'})
+            return render(request, 'training/trainingadd.html', {'form':TrainingEditForm(), 'error':'Entered wrong data!'})
 
 @login_required
 def trainingedit(request, pk):

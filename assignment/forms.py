@@ -19,7 +19,7 @@ class AssignmentEditForm(forms.ModelForm):
         'office':'OFFICE', 
         'startdate':'DATE FROM ', 
         'enddate':'DATE TO', 
-        'category':'CATEGORYY',  
+        'category':'CATEGORY',  
         }
 
         widgets = {
@@ -30,5 +30,5 @@ class AssignmentEditForm(forms.ModelForm):
             'startdate': forms.DateInput(attrs={'class': 'form-control', 'placeholder': 'Ex: 2018-12-31'}),
             'enddate': forms.DateInput(attrs={'class': 'form-control', 'placeholder': 'Ex: 2018-12-31'}),
             'office': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Enter Office'}),
-            'category': forms.Select(attrs={'class': 'form-control'}),
+            'category': forms.Select(attrs={'class': 'form-control', 'placeholder': 'Primary Duty or Additional Duty'}),
         }
